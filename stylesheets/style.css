@@ -125,11 +125,15 @@ header .navigation nav a svg {
   display: none;
 }
 
-.post {
+.post-container {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: post;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.post-container .post {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,10 +150,15 @@ header .navigation nav a svg {
   width: 100%;
   max-width: 614px;
   background-color: white;
-  border: 2px solid #00ffb3;
+  border: 1px solid #dbdbdb;
+  margin-top: 10px;
 }
 
-.post .post-top {
+.post-container .post:first-child {
+  margin-top: 0;
+}
+
+.post-container .post .post-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,7 +168,7 @@ header .navigation nav a svg {
   padding: 16px;
 }
 
-.post .post-top img {
+.post-container .post .post-top img {
   height: 32px;
   width: 32px;
   border: 2px solid #ff3300;
@@ -167,21 +176,21 @@ header .navigation nav a svg {
   margin-right: 1em;
 }
 
-.post .post-top p {
+.post-container .post .post-top p {
   font-size: 14px;
   font-weight: bold;
 }
 
-.post .post-img {
+.post-container .post .post-img {
   position: relative;
 }
 
-.post .post-img img {
+.post-container .post .post-img img {
   width: 100%;
   height: 100%;
 }
 
-.post .post-img svg {
+.post-container .post .post-img svg {
   position: absolute;
   top: 0;
   right: 0;
@@ -193,7 +202,7 @@ header .navigation nav a svg {
   cursor: pointer;
 }
 
-.post .post-actions {
+.post-container .post .post-actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -208,32 +217,32 @@ header .navigation nav a svg {
   width: 100%;
 }
 
-.post .post-actions svg {
+.post-container .post .post-actions svg {
   height: 24px;
   width: 24px;
   margin-left: 1em;
 }
 
-.post .post-actions svg:first-child {
+.post-container .post .post-actions svg:first-child {
   margin: 0;
 }
 
-.post .post-actions svg:last-child {
+.post-container .post .post-actions svg:last-child {
   margin-left: auto;
 }
 
-.post .post-comments {
+.post-container .post .post-comments {
   font-size: 14px;
   color: #262626;
   padding: 0 16px;
 }
 
-.post .post-comments .likes {
+.post-container .post .post-comments .likes {
   margin: 0.5em 0;
   color: black;
 }
 
-.post .post-comments .comment {
+.post-container .post .post-comments .comment {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,16 +252,16 @@ header .navigation nav a svg {
   margin-top: 1em;
 }
 
-.post .post-comments .comment .user {
+.post-container .post .post-comments .comment .user {
   font-weight: bold;
 }
 
-.post .post-comments .comment .text {
+.post-container .post .post-comments .comment .text {
   font-weight: lighter;
   margin-left: 0.5em;
 }
 
-.post .post-add-comment {
+.post-container .post .post-add-comment {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,18 +275,18 @@ header .navigation nav a svg {
   padding: 0 16px;
 }
 
-.post .post-add-comment svg {
+.post-container .post .post-add-comment svg {
   height: 24px;
   width: 24px;
 }
 
-.post .post-add-comment input {
+.post-container .post .post-add-comment input {
   border: none;
   width: 100%;
   margin: 0 0.5em;
 }
 
-.post .post-add-comment p {
+.post-container .post .post-add-comment p {
   color: black;
 }
 
@@ -336,8 +345,8 @@ footer {
     -ms-grid-columns: 1fr 614px 2fr;
         grid-template-columns: 1fr 614px 2fr;
     /* grid-template-rows: 10vh 80vh 10vh; */
-    -ms-grid-rows: 10vh 1fr 1fr;
-        grid-template-rows: 10vh 1fr 1fr;
+    -ms-grid-rows: 10vh 1fr;
+        grid-template-rows: 10vh 1fr;
     grid-gap: 10px;
         grid-template-areas: "header header header" ". post stories" "footer footer footer";
   }
